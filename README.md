@@ -1,2 +1,27 @@
 # GHBlogComments
-A simple was to include comments on you blog using Github Issues
+
+A simple way to include comments on you blog using GitHub Issues.
+
+
+## Usage
+
+You will need to have a GitHub repository that hosts issues somewhere. The issues will be your blog's comments. For this example, I will assume that the repository that is hosting your comments/issues is called REPONAME. I will also assume that your GitHub username is USERNAME. For each blog post where you want to include comments, you will need to create an issue in your repository. After creating it, take a note of what the issue number is. For this example, I will assume that the issue number is 42. Then, wherever on your page that you want the comments to appear, simply add the line:
+
+```javacript
+<script type="text/javascript" data-repoName="USERNAME/REPONAME" data-issueNumber="42" src="https://jtiosue.github.io/GHBlogComments/ghcomments.js"></script>
+```
+
+If you are using Jekyll, I recommend having a variable for each of your posts,
+
+```
+---
+issueNumber: 42
+---
+```
+
+and then you can replace `data-issueNumber="42"` with `data-issueNumber="{{ page.issueNumber }}"`.
+
+
+#### Credits
+
+My javascript file is adapted from [here](https://aristath.github.io/blog/static-site-comments-using-github-issues-api) to specifically serve my purposes.
