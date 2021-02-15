@@ -19,9 +19,12 @@ issueNumber: 42
 ---
 ```
 
-and then you can replace `data-issueNumber="42"` with `data-issueNumber="{{ page.issueNumber }}"`.
+and then you can replace `data-issueNumber="42"` with `data-issueNumber="{{ page.issueNumber }}"`. See my example below.
 
 
 #### Credits
 
 My javascript file is adapted from [here](https://aristath.github.io/blog/static-site-comments-using-github-issues-api) to specifically serve my purposes.
+
+
+<script type="text/javascript" data-repoName="jtiosue/GHBlogComments" data-issueNumber="1" src="https://jtiosue.github.io/GHBlogComments/ghcomments.js"></script>
