@@ -19,7 +19,7 @@ issueNumber: 42
 ---
 ```
 
-and then you can replace `data-issueNumber="42"` with `data-issueNumber="{{ page.issueNumber }}"`. See my example below.
+and then you can replace `data-issueNumber="42"` with {% raw %}`data-issueNumber="{{ page.issueNumber }}"` {% endraw %}. See my example below.
 
 
 #### Credits
