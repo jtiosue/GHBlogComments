@@ -29,7 +29,7 @@ My javascript file is adapted from [here](https://aristath.github.io/blog/static
 
 # Example comment section
 
-Go to [https://jtiosue.github.io/ghblogcomments](https://jtiosue.github.io/ghblogcomments) to see this example live.
+Go to [https://jtiosue.github.io/ghblogcomments](https://jtiosue.github.io/GHBlogComments) to see this example live.
 
 
 <script type="text/javascript" data-repoName="jtiosue/GHBlogComments" data-issueNumber="1" src="https://jtiosue.github.io/GHBlogComments/ghcomments.js"></script>
