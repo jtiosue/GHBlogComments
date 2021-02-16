@@ -7,17 +7,13 @@ const apiUrl = 'https://api.github.com/repos/' + repoName + '/issues/' + issueNu
 const commentSite = "https://github.com/" + repoName + "/issues/" + issueNumber;
 
 let bgColor = '#edf9fc';
-try {
+if(document.currentScript.getAttribute("data-bgColor")) {
     bgColor = document.currentScript.getAttribute("data-bgColor");
-} catch(error) {
-    console.log("No background color provided, so using the default");
 }
 
 let titleColor = false;
-try {
+if(document.currentScript.getAttribute("data-titleColor")) {
     titleColor = document.currentScript.getAttribute("data-titleColor");
-} catch(error) {
-    console.log("No title color provided, so using the default");
 }
 
 console.log('background-color: ' + bgColor + '; title-color: ' + titleColor + ';');
