@@ -1,10 +1,13 @@
 // adapted from https://aristath.github.io/blog/static-site-comments-using-github-issues-api
 
+// We use var everywhere instead of let and const in case we want to have two comment threads on the same page.
+// Otherwise we get weird errors "redeclaration of ..."
+
 // get attributes
-const repoName = document.currentScript.getAttribute("data-repoName");
-const issueNumber = document.currentScript.getAttribute("data-issueNumber");
-const apiUrl = 'https://api.github.com/repos/' + repoName + '/issues/' + issueNumber + '/comments';
-const commentSite = "https://github.com/" + repoName + "/issues/" + issueNumber;
+var repoName = document.currentScript.getAttribute("data-repoName");
+var issueNumber = document.currentScript.getAttribute("data-issueNumber");
+var apiUrl = 'https://api.github.com/repos/' + repoName + '/issues/' + issueNumber + '/comments';
+var commentSite = "https://github.com/" + repoName + "/issues/" + issueNumber;
 
 var bgColor = '#edf9fc';
 if(document.currentScript.getAttribute("data-bgColor")) {
