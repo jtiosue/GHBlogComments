@@ -47,7 +47,7 @@ function createCommentEl( response ) {
     commentContents.classList.add('comment-content');
     let user = document.createElement('a');
     user.setAttribute('href', response.html_url);
-    user.innerHTML = response.user.login + ' (' + response.updated_at + ')';
+    user.innerHTML = response.user.login + ' (' + response.created_at.slice(0, response.created_at.search('T')) + ')';
     user.classList.add('user');
     commentContents.appendChild(user)
     commentContents.innerHTML = commentContents.innerHTML + "<br/>" + response.body + "<br/>";
