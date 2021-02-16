@@ -35,10 +35,3 @@ Go to [https://jtiosue.github.io/ghblogcomments](https://jtiosue.github.io/GHBlo
 
 
 <script type="text/javascript" data-repoName="jtiosue/GHBlogComments" data-issueNumber="1" src="https://jtiosue.github.io/GHBlogComments/ghcomments.js"></script>
-
-# Example comment section with additional parameters
-
-In this example, I will supply the additional parameters `data-bgColor` and `data-titleColor`.
-
-<script type="text/javascript" data-repoName="jtiosue/GHBlogComments" data-issueNumber="1" src="https://jtiosue.github.io/GHBlogComments/ghcomments.js" data-bgColor="red" data-titleColor="green"></script>
-
