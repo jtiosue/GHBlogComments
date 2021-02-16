@@ -1,9 +1,23 @@
 // adapted from https://aristath.github.io/blog/static-site-comments-using-github-issues-api
 
+// get attributes
 const repoName = document.currentScript.getAttribute("data-repoName");
 const issueNumber = document.currentScript.getAttribute("data-issueNumber");
 const apiUrl = 'https://api.github.com/repos/' + repoName + '/issues/' + issueNumber + '/comments';
 const commentSite = "https://github.com/" + repoName + "/issues/" + issueNumber;
+
+try {
+    const bgColor = document.currentScript.getAttribute("data-bgColor");
+} catch (error) {
+    console.log("No background color provided, so using the default");
+    const bgColor = "#edf9fc";
+}
+
+try {
+    const titleColor = document.currentScript.getAttribute("data-titleColor");
+} catch (error) {
+    const titleColor = false;
+}
 
 let body = document.currentScript.parentElement;
 let header = document.createElement('h2');
@@ -43,10 +57,13 @@ function createCommentEl( response ) {
     //userAvatar.setAttribute( 'style', 'width: 40px; float: left;' );
 
     let commentContents = document.createElement('div')
-    commentContents.setAttribute('style', 'background-color: #edf9fc; padding: 1em 1em 1em 1em;');
+    commentContents.setAttribute('style', 'background-color: ' + bgColor + '; padding: 1em 1em 1em 1em;');
     commentContents.classList.add('comment-content');
     let user = document.createElement('a');
     user.setAttribute('href', response.html_url);
+    if(titleColor) {
+        user.setAttribute("style", "color: " + titleColor + ";");
+    }
     user.innerHTML = response.user.login + ' (' + response.created_at.slice(0, response.created_at.search('T')) + ')';
     user.classList.add('user');
     commentContents.appendChild(user)

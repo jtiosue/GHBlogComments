@@ -1,6 +1,6 @@
 # GHBlogComments
 
-A simple way to include comments on you blog using GitHub Issues.
+A simple way to include comments on you blog using GitHub Issues. See my live example below.
 
 
 ## Usage
@@ -19,7 +19,9 @@ issueNumber: 42
 ---
 ```
 
-and then you can replace `data-issueNumber="42"` with {% raw %}`data-issueNumber="{{ page.issueNumber }}"` {% endraw %}. See my example below.
+and then you can replace `data-issueNumber="42"` with {% raw %}`data-issueNumber="{{ page.issueNumber }}"` {% endraw %}.
+
+**Optional**: You can also provide the attributes `data-bgColor` and `data-titleColor`, but you don't have to. The `data-bgColor` attribute sets the color of the div where the comments are posted. The `data-titleColor` attribute sets the color of the username attributed to the comment.
 
 
 #### Credits
@@ -33,3 +35,10 @@ Go to [https://jtiosue.github.io/ghblogcomments](https://jtiosue.github.io/GHBlo
 
 
 <script type="text/javascript" data-repoName="jtiosue/GHBlogComments" data-issueNumber="1" src="https://jtiosue.github.io/GHBlogComments/ghcomments.js"></script>
+
+# Example comment section with additional parameters
+
+In this example, I will supply the additional parameters `data-bgColor` and `data-titleColor`.
+
+<script type="text/javascript" data-repoName="jtiosue/GHBlogComments" data-issueNumber="1" src="https://jtiosue.github.io/GHBlogComments/ghcomments.js" data-bgColor="red" data-titleColor="green"></script>
+
