@@ -60,7 +60,7 @@ function createCommentEl( response ) {
 
     var commentContents = document.createElement('div')
     commentContents.setAttribute('style', 'background-color: ' + bgColor + '; padding: 1em 1em 1em 1em;');
-    commentContents.classList.add('comment-content');
+    // commentContents.classList.add('comment-content');
     var user = document.createElement('a');
     user.setAttribute('href', response.html_url);
     if(titleColor) {
