@@ -6,14 +6,14 @@ const issueNumber = document.currentScript.getAttribute("data-issueNumber");
 const apiUrl = 'https://api.github.com/repos/' + repoName + '/issues/' + issueNumber + '/comments';
 const commentSite = "https://github.com/" + repoName + "/issues/" + issueNumber;
 
-var bgColor = '#edf9fc';
+let bgColor = '#edf9fc';
 try {
     bgColor = document.currentScript.getAttribute("data-bgColor");
 } catch(error) {
     console.log("No background color provided, so using the default");
 }
 
-var titleColor = false;
+let titleColor = false;
 try {
     titleColor = document.currentScript.getAttribute("data-titleColor");
 } catch(error) {
