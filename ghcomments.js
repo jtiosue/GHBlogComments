@@ -6,17 +6,18 @@ const issueNumber = document.currentScript.getAttribute("data-issueNumber");
 const apiUrl = 'https://api.github.com/repos/' + repoName + '/issues/' + issueNumber + '/comments';
 const commentSite = "https://github.com/" + repoName + "/issues/" + issueNumber;
 
+var bgColor = "#edf9fc";
 try {
-    const bgColor = document.currentScript.getAttribute("data-bgColor");
+    bgColor = document.currentScript.getAttribute("data-bgColor");
 } catch (error) {
     console.log("No background color provided, so using the default");
-    const bgColor = "#edf9fc";
 }
 
+var titleColor = false;
 try {
     const titleColor = document.currentScript.getAttribute("data-titleColor");
 } catch (error) {
-    const titleColor = false;
+    console.log("No title color provided, so using the default");
 }
 
 let body = document.currentScript.parentElement;
