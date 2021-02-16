@@ -18,29 +18,29 @@ if(document.currentScript.getAttribute("data-titleColor")) {
 
 console.log('repoName: ' + repoName + '; issueNumber: ' + issueNumber + '; bgColor: ' + bgColor + '; titleColor: ' + titleColor + ';');
 
-let body = document.currentScript.parentElement;
-let header = document.createElement('h2');
+var body = document.currentScript.parentElement;
+var header = document.createElement('h2');
 header.innerHTML = "Comments";
 body.appendChild(header);
 
-let desc = document.createElement('p');
+var desc = document.createElement('p');
 desc.innerHTML = "<strong>Click <a href='" + commentSite + "' target='_blank'>here</a> to post your own comment, or click a comment to reply to it.</strong> <em>You will need to use your GitHub account to post. Please use text or HTML formatting; markdown will not work. Comments appear on this page instantly.</em>";
 body.appendChild(desc);
 
-let ghCommentsList = document.createElement('div');
+var ghCommentsList = document.createElement('div');
 body.appendChild(ghCommentsList);
 
 // get comments
-let request = new XMLHttpRequest();
+var request = new XMLHttpRequest();
 request.open('GET', apiUrl, true);
 request.onload = function() {
     if (this.status >= 200 && this.status < 400) {
-        let response = JSON.parse(this.response);
+        var response = JSON.parse(this.response);
         for (var i = 0; i < response.length; i++) {
             ghCommentsList.appendChild(createCommentEl(response[i]));
         }
         if (0 === response.length) {
-            let noComments = document.createElement('p');
+            var noComments = document.createElement('p');
             noComments.innerHTML = "<em>No comments found for this article.</em>";
             ghCommentsList.appendChild(noComments);
         }
@@ -50,15 +50,15 @@ request.onload = function() {
 };
 
 function createCommentEl( response ) {
-    //let userAvatar = document.createElement( 'img' );
+    //var userAvatar = document.createElement( 'img' );
     //userAvatar.classList.add( 'avatar' );
     //userAvatar.setAttribute( 'src', response.user.avatar_url );
     //userAvatar.setAttribute( 'style', 'width: 40px; float: left;' );
 
-    let commentContents = document.createElement('div')
+    var commentContents = document.createElement('div')
     commentContents.setAttribute('style', 'background-color: ' + bgColor + '; padding: 1em 1em 1em 1em;');
     commentContents.classList.add('comment-content');
-    let user = document.createElement('a');
+    var user = document.createElement('a');
     user.setAttribute('href', response.html_url);
     if(titleColor) {
         user.setAttribute("style", "color: " + titleColor + ";");
@@ -68,7 +68,7 @@ function createCommentEl( response ) {
     commentContents.appendChild(user)
     commentContents.innerHTML = commentContents.innerHTML + "<br/>" + response.body + "<br/>";
 
-    let comment = document.createElement('p');
+    var comment = document.createElement('p');
     comment.setAttribute('data-created', response.created_at);
     comment.setAttribute('data-author-avatar', response.user.avatar_url);
     comment.setAttribute('data-user-url', response.user.url);
