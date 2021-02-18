@@ -1,13 +1,13 @@
 // adapted from https://aristath.github.io/blog/static-site-comments-using-github-issues-api
 
 // markdown to html
-// https://www.bigomega.dev/markdown-parser
+// adapted from https://www.bigomega.dev/markdown-parser
 function parseMarkdown(markdownText) {
     const htmlText = markdownText
         .replace(/^### (.*$)/gim, '<h3>$1</h3>')
         .replace(/^## (.*$)/gim, '<h2>$1</h2>')
         .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-        .replace(/^- (.*$)/gim, '<li>$1</li>')
+        .replace(/^- (.*$)/gim, '<ul><li>$1</li></ul>')
         .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
         .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
         .replace(/\*(.*)\*/gim, '<em>$1</em>')
@@ -43,7 +43,7 @@ header.innerHTML = "Comments";
 body.appendChild(header);
 
 let desc = document.createElement('p');
-desc.innerHTML = "<strong>Click <a href='" + commentSite + "' target='_blank'>here</a> to post your own comment, or click a comment to reply to it.</strong> <em>You will need to use your GitHub account to post. Please use text or HTML formatting; markdown will not work. Comments appear on this page instantly.</em>";
+desc.innerHTML = "<strong>Click <a href='" + commentSite + "' target='_blank'>here</a> to post your own comment, or click a comment to reply to it.</strong> <em>You will need to use your GitHub account to post. It is best to use text or HTML formatting, but most markdown will render fine. Comments appear on this page instantly.</em>";
 body.appendChild(desc);
 
 let ghCommentsList = document.createElement('div');
