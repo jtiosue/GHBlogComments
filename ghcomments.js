@@ -1,5 +1,12 @@
 // adapted from https://aristath.github.io/blog/static-site-comments-using-github-issues-api
 
+// get markdown to html converter
+var script = document.createElement("script");
+script.src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/<version tag>/showdown.min.js";
+document.head.appendChild(script);
+var converter = new showdown.Converter();
+
+
 // get attributes
 const repoName = document.currentScript.getAttribute("data-repoName");
 const issueNumber = document.currentScript.getAttribute("data-issueNumber");
@@ -66,7 +73,7 @@ function createCommentEl( response ) {
     user.innerHTML = response.user.login + ' (' + response.created_at.slice(0, response.created_at.search('T')) + ')';
     user.classList.add('user');
     commentContents.appendChild(user)
-    commentContents.innerHTML = commentContents.innerHTML + "<br/>" + response.body + "<br/>";
+    commentContents.innerHTML = commentContents.innerHTML + "<br/>" + converter.makeHtml(response.body) + "<br/>";
 
     let comment = document.createElement('p');
     comment.setAttribute('data-created', response.created_at);
