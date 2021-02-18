@@ -1,6 +1,17 @@
 // adapted from https://aristath.github.io/blog/static-site-comments-using-github-issues-api
+// https://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file
 
-function callback() {
+function load(f) {
+    // get markdown to html converter
+    var script = document.createElement("script");
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js";
+    script.type = 'text/javascript';
+    script.onreadystatechange = f;
+    script.onload = f;
+    document.head.appendChild(script);
+}
+
+var callback = function() {
 
     var converter = new showdown.Converter();
 
@@ -84,12 +95,6 @@ function callback() {
     }
 
     request.send();
-}
+};
 
-// get markdown to html converter
-var script = document.createElement("script");
-script.src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js";
-script.type = 'text/javascript';
-script.onreadystatechange = callback;
-script.onload = callback;
-document.head.appendChild(script);
+load(callback);
