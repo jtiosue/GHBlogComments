@@ -7,7 +7,7 @@ function parseMarkdown(markdownText) {
         .replace(/^### (.*$)/gim, '<h3>$1</h3>')
         .replace(/^## (.*$)/gim, '<h2>$1</h2>')
         .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-        .replace(/^- (.*$)/gim, '<ul><li>$1</li></ul>')
+        .replace(/^- (.*$)/gim, '<li style="padding-left: 2em;">$1</li>')
         .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
         .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
         .replace(/\*(.*)\*/gim, '<em>$1</em>')
@@ -82,7 +82,7 @@ function createCommentEl( response ) {
     if(titleColor) {
         user.setAttribute("style", "color: " + titleColor + ";");
     }
-    user.innerHTML = response.user.login + ' (' + response.created_at.slice(0, response.created_at.search('T')) + ')';
+    user.innerHTML = "<strong>" + response.user.login + ' (' + response.created_at.slice(0, response.created_at.search('T')) + ')</strong>';
     user.classList.add('user');
     commentContents.appendChild(user)
     commentContents.innerHTML = commentContents.innerHTML + "<br/>" + parseMarkdown(response.body) + "<br/>";
