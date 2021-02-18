@@ -2,7 +2,7 @@
 
 // get markdown to html converter
 var script = document.createElement("script");
-script.src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/<version tag>/showdown.min.js";
+script.src = "https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js";
 document.head.appendChild(script);
 var converter = new showdown.Converter();
 
