@@ -43,7 +43,7 @@ header.innerHTML = "Comments";
 body.appendChild(header);
 
 let desc = document.createElement('p');
-desc.innerHTML = "<strong>Click <a href='" + commentSite + "' target='_blank'>here</a> to post your own comment, or click a comment to reply to it.</strong> <em>You will need to use your GitHub account to post. It is best to use text or HTML formatting, but most markdown will render fine. Comments appear on this page instantly.</em>";
+desc.innerHTML = "<strong>Click <a href='" + commentSite + "' target='_blank'><strong>here</strong></a> to post your own comment, or click a comment to reply to it.</strong> <em>You will need to use your GitHub account to post. It is best to use text or HTML formatting, but most markdown will render fine. Comments appear on this page instantly.</em>";
 body.appendChild(desc);
 
 let ghCommentsList = document.createElement('div');
