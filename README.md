@@ -21,7 +21,7 @@ issueNumber: 42
 
 and then you can replace `data-issueNumber="42"` with {% raw %}`data-issueNumber="{{ page.issueNumber }}"` {% endraw %}.
 
-**Optional**: You can also provide the attributes `data-bgColor` and `data-titleColor`, but you don't have to. The `data-bgColor` attribute sets the color of the div where the comments are posted. The `data-titleColor` attribute sets the color of the username attributed to the comment.
+**Optional**: You can also provide the attributes `data-bgColor` and `data-titleColor`, but you don't have to. The `data-bgColor` attribute sets the color of the div where the comments are posted. The `data-titleColor` attribute sets the color of the username attributed to the comment. Check out [this page](example-comments.md) for an example setting these attributes.
 
 
 #### Credits
@@ -31,7 +31,7 @@ My javascript file is adapted from [here](https://aristath.github.io/blog/static
 
 # Example comment section
 
-Go to [https://jtiosue.github.io/ghblogcomments](https://jtiosue.github.io/GHBlogComments) to see this example live.
+Go to [https://jtiosue.github.io/GHBlogComments](https://jtiosue.github.io/GHBlogComments) to see this example live.
 
 
 <script type="text/javascript" data-repoName="jtiosue/GHBlogComments" data-issueNumber="1" src="https://jtiosue.github.io/GHBlogComments/ghcomments.js"></script>
