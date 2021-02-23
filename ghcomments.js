@@ -79,6 +79,7 @@ function createCommentEl( response ) {
     // commentContents.classList.add('comment-content');
     let user = document.createElement('a');
     user.setAttribute('href', response.html_url);
+    user.setAttribute('target', '_blank');
     if(titleColor) {
         user.setAttribute("style", "color: " + titleColor + ";");
     }
