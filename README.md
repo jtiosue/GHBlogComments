@@ -1,6 +1,6 @@
 # GHBlogComments
 
-A simple way to include comments on you blog using GitHub Issues. See my live example below.
+A simple way to include comments on your blog using GitHub Issues. See my live example below.
 
 
 ## Usage
