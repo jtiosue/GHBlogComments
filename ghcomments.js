@@ -77,7 +77,10 @@ function createCommentEl( response ) {
     //userAvatar.setAttribute( 'style', 'width: 40px; float: left;' );
 
     let commentContents = document.createElement('div')
-    commentContents.setAttribute('style', 'background-color: ' + bgColor + '; padding: 1em 1em 1em 1em;');
+    commentContents.setAttribute(
+        'style',
+        'background-color: ' + bgColor + '; padding: 1em 1em 1em 1em; border-radius: 15px;'
+    );
     // commentContents.classList.add('comment-content');
     let user = document.createElement('a');
     user.setAttribute('href', response.html_url);
